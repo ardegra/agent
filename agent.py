@@ -42,8 +42,6 @@ def run_spider(spider_name, image_name):
     auto_remove=True,
     detach=True,
     name=container_name,
-    volumes={Config.ARDEGRA_DIRECTORY: {"bind": "/root/app", "mode": "rw"}},
-    working_dir="/root/app"
   )
   print("[agent] is running: {}".format(container_name))
 
@@ -61,9 +59,11 @@ def run():
     client.close()
 
 if __name__ == "__main__":
+  print("[agent] Agent is running")
   t = threading.Thread(target=check_status)
   t.start()
   
   while True:
     run()
     time.sleep(5)
+  print("[agent] Agent is stopped")
