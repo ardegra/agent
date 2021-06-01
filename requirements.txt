@@ -9,5 +9,5 @@ regex==2018.1.10
 requests==2.18.4
 six==1.11.0
 Unidecode==0.4.21
-urllib3==1.22
+urllib3==1.26.5
 websocket-client==0.46.0
